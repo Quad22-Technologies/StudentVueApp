@@ -11,7 +11,7 @@ import { RegistrationComponent } from './registration/registration.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    TestbranchComponent
+    TestbranchComponent,
     RegistrationComponent
 
   ],

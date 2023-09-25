@@ -7,7 +7,7 @@ import { TestbranchComponent } from './testbranch/testbranch.component';
 const routes: Routes = [
   {path:'login', component:LoginComponent}, 
   {path:'testbranch', component:TestbranchComponent},
-   {path:'registration', component:RegistrationComponent}
+  {path:'registration', component:RegistrationComponent}
 ];
 
 @NgModule({
