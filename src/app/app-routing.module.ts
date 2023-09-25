@@ -5,7 +5,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { TestbranchComponent } from './testbranch/testbranch.component';
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent}, 
+  {path:'', component:LoginComponent}, 
   {path:'testbranch', component:TestbranchComponent},
   {path:'registration', component:RegistrationComponent}
 ];
