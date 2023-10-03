@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TestbranchComponent } from './testbranch/testbranch.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

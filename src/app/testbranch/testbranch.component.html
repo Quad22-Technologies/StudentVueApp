@@ -1,3 +1,21 @@
 <p>testbranch works!</p>
 
-<button>Hello World</button>
+<!--A form group tracks the status and changes for each of its controls, 
+so if one of the controls changes, the parent control also emits a new status or value change. 
+The model for the group is maintained from its members. After you define the model, 
+you must update the template to reflect the model in the view -->
+<form [formGroup]="form">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  <br>
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+  <br>
+  <!-- RouterLink template, makes that element(button element in this case) a link that initiates navigation to a route.
+       look in the app-routing.module.ts file.. the code below routes to the registration form -->
+    <button [routerLink]="['/registration']"> Register</button>
+
+    <button (click)="showFormValues()"> Show Form Data</button>
+   
+</form>
