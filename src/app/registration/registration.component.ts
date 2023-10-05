@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -8,6 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class RegistrationComponent {
   regUsers: any[] = [];
+  
+  //Move this in a model class and inject it into this component
   regObj: any = {
     firstName: "",
     lastName: "",
@@ -19,6 +21,10 @@ export class RegistrationComponent {
     password:"",
     password2:""
   };
+
+  form = new FormGroup({ //Add your Form controls to this section so you can use them in the typescript
+
+  });
 
 
 }
