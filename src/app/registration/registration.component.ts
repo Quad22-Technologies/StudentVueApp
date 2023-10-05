@@ -7,6 +7,18 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./registration.component.scss' ]
 })
 export class RegistrationComponent {
+  regUsers: any[] = [];
+  regObj: any = {
+    firstName: "",
+    lastName: "",
+    address:"",
+    city:"",
+    state:"",
+    zipCode:"",
+    username: "",
+    password:"",
+    password2:""
+  };
 
 
 }

@@ -1,21 +1,42 @@
-<form form-fillable>
+<form formGroup ="form">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <input class="form-control mr-sm-2" type="search" placeholder="First Name" aria-label="Search" id="searchbar">
+                <input class="form-control mr-sm-2" type="search" placeholder="First Name" aria-label="Search" id="firstName">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="Last Name" aria-label="Search" id="searchbar">
+                <input class="form-control mr-sm-2" type="search" placeholder="Last Name" aria-label="Search" id="lastName">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="User name" aria-label="Search" id="searchbar">
+                <input class="form-control mr-sm-2" type="search" placeholder="Address" aria-label="Search" id="address">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search" id="searchbar" minlength="8">
+                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="city">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="Re-enter Password" aria-label="Search" id="searchbar" minlength="8">
+                <input class="form-control mr-sm-2" type="search" placeholder="State" aria-label="Search" id="state">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="Email Address" aria-label="Search" id="searchbar">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip" aria-label="Search" id="zipCode">
                 <br>
-                <input class="form-control mr-sm-2" type="search" placeholder="Phone Number" aria-label="Search" id="searchbar">
+                <input class="form-control mr-sm-2" type="search" placeholder="User name" aria-label="Search" id="username">
                 <br>
+                <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search" id="password" minlength="8">
+                <br>
+                <input class="form-control mr-sm-2" type="search" placeholder="Re-enter Password" aria-label="Search" id="password2" minlength="8">
+                <br>
+                <label for="userGrade">Grade: </label>
+                <select ng-model="userGrade">
+                    <option value="userGrade">K</option>
+                    <option value="userGrade">1</option>
+                    <option value="userGrade">2</option>
+                    <option value="userGrade">3</option>
+                    <option value="userGrade">4</option>
+                    <option value="userGrade">5</option>
+                    <option value="userGrade">6</option>
+                    <option value="userGrade">7</option>
+                    <option value="userGrade">8</option>
+                    <option value="userGrade">9</option>
+                    <option value="userGrade">10</option>
+                    <option value="userGrade">11</option>
+                    <option value="userGrade">12</option>
+                </select>
+                <br><br>
                 <button type="submit" class="btn-primary">Submit</button>
              </div>
          </div>
