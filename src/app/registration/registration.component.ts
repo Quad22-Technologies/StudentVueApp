@@ -24,7 +24,15 @@ export class RegistrationComponent {
   };
 
   form = new FormGroup({ //Add your Form controls to this section so you can use them in the typescript
-
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormControl(''),
+    city: new FormControl(''),
+    state: new FormControl(''),
+    zipCode: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
+    password2: new FormControl('')
   });
 
   constructor(private router:Router) {}
