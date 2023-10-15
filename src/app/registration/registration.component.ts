@@ -38,6 +38,6 @@ export class RegistrationComponent {
   constructor(private router:Router) {}
 
   onSubmit() {
-    this.router.navigate(['/src/app/login']);
+    this.router.navigate(['']);
   }
 }
