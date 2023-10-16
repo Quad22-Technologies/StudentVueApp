@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss' ]
+})
+
+@Injectable({
+  providedIn: 'root',
 })
 export class RegistrationComponent {
   regUsers: any[] = [];
@@ -35,9 +40,21 @@ export class RegistrationComponent {
     password2: new FormControl('')
   });
 
-  constructor(private router:Router) {}
+constructor(private router:Router){}
 
   onSubmit() {
     this.router.navigate(['']);
   }
+}
+
+interface regObj {
+  firstName: string
+  lastName: string
+  address: string
+  city: string
+  state: string
+  zipCode: number
+  username: string
+  password: string
+  password2: string
 }

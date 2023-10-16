@@ -1,55 +1,60 @@
-<form [formGroup] ="form">
-    <form (ngSubmit)="onSubmit()">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col">
-                    <label for="firstName">First Name: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="First Name" aria-label="Search" id="firstName">
-                    <br>
-                    <label for="lastName">Last Name: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Last Name" aria-label="Search" id="lastName">
-                    <br>
-                    <label for="address">Home Address: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Address" aria-label="Search" id="address">
-                    <br>
-                    <label for="city">City: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="city">
-                    <br>
-                    <label for="state">State: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="State" aria-label="Search" id="state">
-                    <br>
-                    <label for="zipCode">Zipcode: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search" id="zipCode">
-                    <br>
-                    <label for="username">Username: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Search" id="username">
-                    <br>
-                    <label for="password">Password: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search" id="password" minlength="8">
-                    <br>
-                    <label for="password2">Re-enter Password: </label>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Re-enter Password" aria-label="Search" id="password2" minlength="8">
-                    <br>
-                    <label for="userGrade">Grade: </label>
-                    <select ng-model="userGrade">
-                        <option value="userGrade">K</option>
-                        <option value="userGrade">1</option>
-                        <option value="userGrade">2</option>
-                        <option value="userGrade">3</option>
-                        <option value="userGrade">4</option>
-                        <option value="userGrade">5</option>
-                        <option value="userGrade">6</option>
-                        <option value="userGrade">7</option>
-                        <option value="userGrade">8</option>
-                        <option value="userGrade">9</option>
-                        <option value="userGrade">10</option>
-                        <option value="userGrade">11</option>
-                        <option value="userGrade">12</option>
-                    </select>
-                    <br><br>
-                    <button [routerLink]="['']" (click)="onSubmit()">Register</button>
-                </div>
+<form [formGroup]="form" form (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <label for="firstName">First Name: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="First Name" aria-label="Search"
+                    id="firstName">
+                <br>
+                <label for="lastName">Last Name: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Last Name" aria-label="Search"
+                    id="lastName">
+                <br>
+                <label for="address">Home Address: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Address" aria-label="Search"
+                    id="address">
+                <br>
+                <label for="city">City: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="city">
+                <br>
+                <label for="state">State: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="State" aria-label="Search" id="state">
+                <br>
+                <label for="zipCode">Zipcode: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search"
+                    id="zipCode">
+                <br>
+                <label for="username">Username: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Search"
+                    id="username">
+                <br>
+                <label for="password">Password: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search"
+                    id="password" minlength="8">
+                <br>
+                <label for="password2">Re-enter Password: </label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Re-enter Password" aria-label="Search"
+                    id="password2" minlength="8">
+                <br>
+                <label for="userGrade">Grade: </label>
+                <select ng-model="userGrade">
+                    <option value="userGrade">K</option>
+                    <option value="userGrade">1</option>
+                    <option value="userGrade">2</option>
+                    <option value="userGrade">3</option>
+                    <option value="userGrade">4</option>
+                    <option value="userGrade">5</option>
+                    <option value="userGrade">6</option>
+                    <option value="userGrade">7</option>
+                    <option value="userGrade">8</option>
+                    <option value="userGrade">9</option>
+                    <option value="userGrade">10</option>
+                    <option value="userGrade">11</option>
+                    <option value="userGrade">12</option>
+                </select>
+                <br><br>
+                <button [routerLink]="['']" (click)="onSubmit()">Register</button>
             </div>
         </div>
-    </form>
+    </div>
 </form>
