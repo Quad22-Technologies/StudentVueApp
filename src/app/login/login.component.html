@@ -1,9 +1,13 @@
-
+<form [formGroup]="LoginForm">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col">
-        <input class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Search" id="searchbar">
-        <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search" id="searchbar">
+        <input class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Search" id="username" formControlName="username">
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Password" aria-label="Search" id="password" formControlName="password">
       </div>
     </div>
   </div>
+  <button type="submit" class="btn-success" (click)="submit()">Submit</button>
+  <button type="submit" class="btn-primary" [routerLink]="['/registration']">register</button>
+</form>

@@ -5,17 +5,40 @@ so if one of the controls changes, the parent control also emits a new status or
 The model for the group is maintained from its members. After you define the model, 
 you must update the template to reflect the model in the view -->
 <form [formGroup]="form">
+  <div class="container">
+    <div class="container-fluid">
+      <label for="first-name">Full Name Drop Down list: </label>
+    <!--
+    below is the select bootstrap dropdown. 
+    we are iterating through the list of family names in the .ts file. if you look in the .ts file the array name is familyNameList
+    
+    instead of doing the example below:
+    <select ng-model="userGrade">
+        <option value="userGrade">K</option>
+        <option value="userGrade">1</option>
+    </select>
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
-  <br>
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  <br>
-  <!-- RouterLink template, makes that element(button element in this case) a link that initiates navigation to a route.
-       look in the app-routing.module.ts file.. the code below routes to the registration form -->
-    <button [routerLink]="['/registration']"> Register</button>
+    We set the value of the drop down to the id in the FamilyName object. Go to the models > testfullname.ts file and you will see the id property 
+   -->
+      <select class="form-control" formControlName="namelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select Website</option>
+        <option *ngFor="let name of familyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
+      </select>
 
-    <button (click)="showFormValues()"> Show Form Data</button>
-   
+      <label for="first-name">First Name: </label>
+      <input id="first-name" class="form-control" type="text" formControlName="firstName">
+
+      <label for="last-name">Last Name: </label>
+      <input id="last-name" class="form-control" type="text" formControlName="lastName">
+      <br>
+      <!-- RouterLink template, makes that element(button element in this case) a link that initiates navigation to a route.
+         look in the app-routing.module.ts file.. the code below routes to the registration form -->
+      <button type="button" [routerLink]="['/registration']" class="btn btn-primary btn-sm">Register</button>
+
+      <button type="button" class="btn btn-secondary btn-sm" (click)="showFormValues()"> Show Form Data</button>
+
+      <button type="button" class="btn btn-success btn-sm"> + Add Family Memeber</button>
+    </div>
+
+  </div>
 </form>
