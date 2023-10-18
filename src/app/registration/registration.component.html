@@ -38,8 +38,8 @@
                 <br>
                 <label for="userGrade">Grade: </label>
                 <select class="form-control" formControlName="namelist"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-                    <option disabled>Select Website</option>
-                    <option *ngFor="let name of familyName" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
+                    <option disabled>Choose Grade</option>
+                    <option *ngFor="let gradeName of gradelist" [value]="name.id">{{name.gradeName}}</option>
                 </select>
                 <br><br>
                 <button [routerLink]="['']" (click)="onSubmit()">Register</button>

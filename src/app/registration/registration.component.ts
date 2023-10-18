@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
-import { MyFamilyService } from '../services/my-family.service';
-import { FamilyName } from '../models/testfullname';
+import { gradelist } from '../models/gradelist';
+import { GradeListService, GradelistService } from '../services/gradelist.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,25 +10,7 @@ import { FamilyName } from '../models/testfullname';
   styleUrls: ['./registration.component.scss' ]
 })
 
-@Injectable({
-  providedIn: 'root',
-})
 export class RegistrationComponent {
-  regUsers: any[] = [];
-  familyName: FamilyName[] = [];
-  
-  //Move this in a model class and inject it into this component
-  regObj: any = {
-    firstName: "",
-    lastName: "",
-    address:"",
-    city:"",
-    state:"",
-    zipCode:"",
-    username: "",
-    password:"",
-    password2:""
-  };
 
   form = new FormGroup({ //Add your Form controls to this section so you can use them in the typescript
     firstName: new FormControl(''),
@@ -44,12 +25,14 @@ export class RegistrationComponent {
     userGrade: new FormControl('')
   });
 
-constructor(private router:Router, 
-  private familyService:MyFamilyService)
-  {
-    this.familyName = this.familyService.getFamilyNamesData()
-  }
+  //instatiate the objects
+  regUsers: any[] = [];
+  gradelist: gradelist[] = [];
+  gradeName: any;
 
+constructor(private router:Router, private gradelistservice: GradeListService ){}
+
+ngOnInit(): void{}
 
   onSubmit() {
     this.router.navigate(['']);
