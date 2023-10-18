@@ -1,4 +1,4 @@
-interface regObj {
+export interface regObj {
     firstName: string | null;
     lastName: string | null;
     address: string | null;

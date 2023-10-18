@@ -37,20 +37,9 @@
                     id="password2" minlength="8">
                 <br>
                 <label for="userGrade">Grade: </label>
-                <select ng-model="userGrade">
-                    <option value="userGrade">K</option>
-                    <option value="userGrade">1</option>
-                    <option value="userGrade">2</option>
-                    <option value="userGrade">3</option>
-                    <option value="userGrade">4</option>
-                    <option value="userGrade">5</option>
-                    <option value="userGrade">6</option>
-                    <option value="userGrade">7</option>
-                    <option value="userGrade">8</option>
-                    <option value="userGrade">9</option>
-                    <option value="userGrade">10</option>
-                    <option value="userGrade">11</option>
-                    <option value="userGrade">12</option>
+                <select class="form-control" formControlName="namelist"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+                    <option disabled>Select Website</option>
+                    <option *ngFor="let name of familyName" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
                 </select>
                 <br><br>
                 <button [routerLink]="['']" (click)="onSubmit()">Register</button>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { MyFamilyService } from '../services/my-family.service';
+import { FamilyName } from '../models/testfullname';
 
 @Component({
   selector: 'app-registration',
@@ -14,6 +16,7 @@ import { Injectable } from '@angular/core';
 })
 export class RegistrationComponent {
   regUsers: any[] = [];
+  familyName: FamilyName[] = [];
   
   //Move this in a model class and inject it into this component
   regObj: any = {
@@ -37,12 +40,20 @@ export class RegistrationComponent {
     zipCode: new FormControl(''),
     username: new FormControl(''),
     password: new FormControl(''),
-    password2: new FormControl('')
+    password2: new FormControl(''),
+    userGrade: new FormControl('')
   });
 
-constructor(private router:Router){}
+constructor(private router:Router, 
+  private familyService:MyFamilyService)
+  {
+    this.familyName = this.familyService.getFamilyNamesData()
+  }
+
 
   onSubmit() {
     this.router.navigate(['']);
   }
 }
+
+//   this.familyNameList = this.familynameservice.getFamilyNamesData();
