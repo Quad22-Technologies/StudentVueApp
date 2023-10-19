@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gradelist } from '../models/gradelist';
 import { GradeListService, GradelistService } from '../services/gradelist.service';
+import { regObj } from '../models/registration';
 
 @Component({
   selector: 'app-registration',
@@ -26,9 +27,10 @@ export class RegistrationComponent {
   });
 
   //instatiate the objects
-  regUsers: any[] = [];
+  regObj: regObj[] = [];
   gradelist: gradelist[] = [];
   gradeName: any;
+name: any;
 
 constructor(private router:Router, private gradelistservice: GradeListService ){}
 
