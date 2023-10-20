@@ -37,9 +37,9 @@
                     id="password2" minlength="8">
                 <br>
                 <label for="userGrade">Grade: </label>
-                <select class="form-control" formControlName="namelist"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+                <select class="form-control" formControlName="gradelist">
                     <option disabled>Choose Grade</option>
-                    <option *ngFor="let gradeName of gradelist" [value]="name.id">{{name.gradeName}}</option>
+                    <option *ngFor="let gradeName of gradelist" [value]="gradeName.gradeName">{{gradeName.gradeName}}</option>
                 </select>
                 <br><br>
                 <button [routerLink]="['']" (click)="onSubmit()">Register</button>

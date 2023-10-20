@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gradelist } from '../models/gradelist';
-import { GradeListService, GradelistService } from '../services/gradelist.service';
+import { GradeListService } from '../services/gradelist.service';
 import { regObj } from '../models/registration';
 
 @Component({
@@ -23,18 +23,18 @@ export class RegistrationComponent {
     username: new FormControl(''),
     password: new FormControl(''),
     password2: new FormControl(''),
-    userGrade: new FormControl('')
+    gradelist: new FormControl('')
   });
 
   //instatiate the objects
-  regObj: regObj[] = [];
+  regObj: regObj = {};
   gradelist: gradelist[] = [];
-  gradeName: any;
-name: any;
 
 constructor(private router:Router, private gradelistservice: GradeListService ){}
 
-ngOnInit(): void{}
+ngOnInit(): void{
+  this.gradelist = this.gradelistservice.getGradeListData();
+}
 
   onSubmit() {
     this.router.navigate(['']);
