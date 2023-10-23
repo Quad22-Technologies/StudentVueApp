@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FamilyName} from '../models/testfullname'; // imported interface so we can use it
 import { MyFamilyService } from '../services/my-family.service';
+import { BackendConnectFamilyNameService } from '../services/backend-connect-family-name.service';
 
 
 @Component({
@@ -18,22 +19,27 @@ export class TestbranchComponent {
     namelist: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
+    backendnamelist: new FormControl('') //Form control for backend data list dropdown
   });
   
    //instantiate an empty object (family name). 
   fullname: FamilyName = {};
   familyNameList: FamilyName[] = [];
+  backendfamilyNameList: FamilyName[] = []; //Array of objects to hold data from the backend service
 
 //inside this contructor we are inializing the MyFamilyService class object so it can be used thoughout this component
 //If you navigate to the MyFamilyService Class you will see the @Injectable- this decorator that marks a class as available to be provided and injected as a dependency.
 //We are INJECTING MyFAMILYSERVICE Dependency into this component. 
-  constructor(private familynameservice: MyFamilyService){}
+  constructor(private familynameservice: MyFamilyService, private backendFamilyService: BackendConnectFamilyNameService){}
 
   //ngOnInit is a life cycle hook called by Angular to indicate that the Angular is DONE creating the component
   ngOnInit(): void {
    
     this.familyNameList = this.familynameservice.getFamilyNamesData();
-
+    
+    this.backendFamilyService.getFamilyNames().subscribe(data => {
+                                              console.log("Backend Data List", data);
+                                              this.backendfamilyNameList = data; });
   }
 
   //function that captures form values on the click event. Look into the html.

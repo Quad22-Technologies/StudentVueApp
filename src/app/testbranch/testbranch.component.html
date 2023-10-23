@@ -7,7 +7,7 @@ you must update the template to reflect the model in the view -->
 <form [formGroup]="form">
   <div class="container">
     <div class="container-fluid">
-      <label for="first-name">Full Name Drop Down list: </label>
+      <label for="first-name">Full Name Drop Down list - Pulls from Fronend: </label>
     <!--
     below is the select bootstrap dropdown. 
     we are iterating through the list of family names in the .ts file. if you look in the .ts file the array name is familyNameList
@@ -23,6 +23,13 @@ you must update the template to reflect the model in the view -->
       <select class="form-control" formControlName="namelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
         <option disabled>Select Website</option>
         <option *ngFor="let name of familyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
+      </select>
+
+      <label for="first-name">Full Name Drop Down list - Pulls from Backend: </label>
+      <!-- PULLS DATA FROM BACKEND SERVICE-->
+      <select class="form-control" formControlName="backendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select Website</option>
+        <option *ngFor="let name of backendfamilyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
       </select>
 
       <label for="first-name">First Name: </label>
