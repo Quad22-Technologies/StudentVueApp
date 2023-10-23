@@ -39,7 +39,7 @@ export class MyFamilyService {
     }, 
     {
         id:6,
-        firstname: "Mohammed",
+        firstname: "Mohamed",
         lastname: "Kings"
     }, 
     {
