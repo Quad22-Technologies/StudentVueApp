@@ -5,7 +5,7 @@ import { regObj } from '../models/registration';
 @Injectable({
   providedIn: 'root'
 })
-export class BackendConnectFamilyNameService {
+export class registrationApiService {
 
   private registrationurl = 'http://localhost:8080/api'
   headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -14,9 +14,7 @@ export class BackendConnectFamilyNameService {
   constructor(private http: HttpClient) { }
 
   // function pulls names from the backend services
-  getFamilyNames() {
+  getRegInfo() {
     return this.http.get<regObj[]>(this.registrationurl + "/registration", this.httpOptions);
   }
-
-
 }

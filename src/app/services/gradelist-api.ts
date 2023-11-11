@@ -5,7 +5,7 @@ import { gradelist } from '../models/gradelist';
 @Injectable({
   providedIn: 'root'
 })
-export class BackendConnectFamilyNameService {
+export class gradelistApi {
 
   private gradelisturl = 'http://localhost:8080/api'
   headers = new HttpHeaders().set('Content-Type', 'application/json');
