@@ -1,1 +1,30 @@
-<p>gradebook works!</p>
+
+
+  <div class="container mt-3" class="form-inline my-2 my-lg-0">
+    <h2>gradebook</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Class</th>
+          <th>Teacher</th>
+          <th>Grade</th>
+          <th>testing</th>
+        </tr>
+      </thead>
+        <!--gb represents each row in the forloop-->
+      <tbody>
+        <tr *ngFor="let gb of gradebooklist">
+          <td>{{gb.id}}</td>
+          <td>{{gb.class}}</td>
+          <td>{{gb.teacherName}}</td>
+          <td>{{gb.gradeLetter}}</td>
+          <td>{{gb.testing}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
