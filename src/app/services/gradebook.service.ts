@@ -19,29 +19,29 @@ export class GradeBookService {
         id: 0,
         class: "History",
         gradeLetter: "C",
-        teacherName: "Mr.doe",
-        testing: "test0"
+        teacherName: "Mr.doe"
+
       },
       {
         id: 1,
         class: "Science",
         gradeLetter: "B",
-        teacherName: "Mrs.allen",
-        testing: "test1"
+        teacherName: "Mrs.allen"
+
       },
       {
         id: 2,
         class: "Math",
         gradeLetter: "A-",
-        teacherName: "Mr.condo",
-        testing: "test2"
+        teacherName: "Mr.condo"
+
       },
       {
         id: 3,
         class: "Ap art",
         gradeLetter: "C",
-        teacherName: "Ms.leonard",
-        testing: "test3"
+        teacherName: "Ms.leonard"
+
       }
 
     ];

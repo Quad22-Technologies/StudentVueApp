@@ -9,7 +9,7 @@
           <th>Class</th>
           <th>Teacher</th>
           <th>Grade</th>
-          <th>testing</th>
+
         </tr>
       </thead>
         <!--gb represents each row in the forloop-->
@@ -19,11 +19,38 @@
           <td>{{gb.class}}</td>
           <td>{{gb.teacherName}}</td>
           <td>{{gb.gradeLetter}}</td>
-          <td>{{gb.testing}}</td>
-        </tr>
 
+        </tr>
       </tbody>
     </table>
+    <br>
+      <br>
+      <br>
+      <p>hji</p>
+
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id-back</th>
+            <th>Class-back</th>
+            <th>Teacher-back</th>
+            <th>Grade-back</th>
+
+          </tr>
+        </thead>
+          <!--gb represents each row in the forloop-->
+        <tbody>
+          <tr *ngFor="let gb of">
+            <td>{{gb.id}}</td>
+            <td>{{gb.class}}</td>
+            <td>{{gb.teacherName}}</td>
+            <td>{{gb.gradeLetter}}</td>
+
+          </tr>
+        </tbody>
+      </table>
   </div>
 
 
