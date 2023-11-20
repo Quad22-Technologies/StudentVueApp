@@ -14,14 +14,14 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-userlogin:UserLogin = {};/*initializing a new object*/
+  userlogin: UserLogin = {};/*initializing a new object*/
   constructor(private router:Router) { }
   ngOnInit(): void {}
 
 
   submit() {
-    this.userlogin.username= this.LoginForm.controls.username.value
-    this.userlogin.password= this.LoginForm.controls.password.value
+    this.userlogin.username = this.LoginForm.controls.username.value
+    this.userlogin.password = this.LoginForm.controls.password.value
     console.log("testing: ", this.userlogin.username);
     console.log("testing1: ", this.userlogin.password);
     console.log(this.userlogin)

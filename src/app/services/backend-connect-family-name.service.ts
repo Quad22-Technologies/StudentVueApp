@@ -17,6 +17,4 @@ export class BackendConnectFamilyNameService {
   getFamilyNames() {
     return this.http.get<FamilyName[]>(this.familynameurl + "/allnames", this.httpOptions);
   }
-
-
 }

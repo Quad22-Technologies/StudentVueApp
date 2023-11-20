@@ -77,7 +77,7 @@ export class GradeListService {
         gradeName: "12th Grade",
       }
     ];
-    
+
     return fdata; //returns the array of sample data
   }
 }

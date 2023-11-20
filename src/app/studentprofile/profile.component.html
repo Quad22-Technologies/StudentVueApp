@@ -1,0 +1,23 @@
+<div class="container mt-3" class="form-inline my-2 my-lg-0">
+    <h2>Student Information</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <!--gb represents each row in the forloop-->
+        <tbody>
+        <tr>
+            <td>{{student.username}}</td>
+            <td>{{student.fullName}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.grade?.gradeName}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
