@@ -20,18 +20,25 @@ you must update the template to reflect the model in the view -->
 
     We set the value of the drop down to the id in the FamilyName object. Go to the models > testfullname.ts file and you will see the id property 
    -->
-      <select class="form-control" formControlName="namelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-        <option disabled>Select Website</option>
+   <h3>Pulls From Frontend</h3>
+      <select class="form-control" formControlName="controlnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select name</option>
         <option *ngFor="let name of familyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
       </select>
 
       <label for="first-name">Full Name Drop Down list - Pulls from Backend: </label>
+      <h3>Pulls From Backend</h3>
       <!-- PULLS DATA FROM BACKEND SERVICE-->
-      <select class="form-control" formControlName="backendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-        <option disabled>Select Website</option>
+      <select class="form-control" formControlName="controlbackendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select name</option>
         <option *ngFor="let name of backendfamilyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
       </select>
-
+      <h3>Pulls From Backend and Database</h3>
+      <!-- PULLS DATA FROM BACKEND SERVICE and database-->
+      <select class="form-control" formControlName="controldatabasebackendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select name</option>
+        <option *ngFor="let name of databasebackendfamilyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
+      </select>
       <label for="first-name">First Name: </label>
       <input id="first-name" class="form-control" type="text" formControlName="firstName">
 

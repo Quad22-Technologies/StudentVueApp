@@ -16,16 +16,18 @@ export class TestbranchComponent {
   // FormGrop Tracks the value and validity state of a group of FormControl instances
   //When instantiating a FormGroup, pass in a collection of child controls as the first argument. The key for each child registers the name for the control.
   form = new FormGroup({
-    namelist: new FormControl(''),
+    controlnamelist: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    backendnamelist: new FormControl('') //Form control for backend data list dropdown
+    controlbackendnamelist: new FormControl(''), //Form control for backend data list dropdown
+    controldatabasebackendnamelist: new FormControl('')
   });
   
    //instantiate an empty object (family name). 
   fullname: FamilyName = {};
   familyNameList: FamilyName[] = [];
   backendfamilyNameList: FamilyName[] = []; //Array of objects to hold data from the backend service
+  databasebackendfamilyNameList: FamilyName[] = [];
 
 //inside this contructor we are inializing the MyFamilyService class object so it can be used thoughout this component
 //If you navigate to the MyFamilyService Class you will see the @Injectable- this decorator that marks a class as available to be provided and injected as a dependency.
@@ -35,11 +37,17 @@ export class TestbranchComponent {
   //ngOnInit is a life cycle hook called by Angular to indicate that the Angular is DONE creating the component
   ngOnInit(): void {
    
+    //Pulls from frontend only and write data to the familyNameList array
     this.familyNameList = this.familynameservice.getFamilyNamesData();
     
+    //Pulls from backend only and write data to the backendfamilyNameList array
     this.backendFamilyService.getFamilyNames().subscribe(data => {
                                               console.log("Backend Data List", data);
                                               this.backendfamilyNameList = data; });
+
+    //Pulls from backend and database and write data to the databasebackendfamilyNameList array
+    this.backendFamilyService.getDatabaseFamilyNames().subscribe(data => {
+                                                this.databasebackendfamilyNameList = data; }); 
   }
 
   //function that captures form values on the click event. Look into the html.
