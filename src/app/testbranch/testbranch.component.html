@@ -1,5 +1,3 @@
-<p>testbranch works!</p>
-
 <!--A form group tracks the status and changes for each of its controls, 
 so if one of the controls changes, the parent control also emits a new status or value change. 
 The model for the group is maintained from its members. After you define the model, 
@@ -7,52 +5,50 @@ you must update the template to reflect the model in the view -->
 <form [formGroup]="form">
   <div class="container">
     <div class="container-fluid">
-      <label for="first-name">Full Name Drop Down list - Pulls from Fronend: </label>
-    <!--
-    below is the select bootstrap dropdown. 
-    we are iterating through the list of family names in the .ts file. if you look in the .ts file the array name is familyNameList
-    
-    instead of doing the example below:
-    <select ng-model="userGrade">
-        <option value="userGrade">K</option>
-        <option value="userGrade">1</option>
-    </select>
+       
+      <h4>List of family names from database</h4>
+       <select class="form-control" formControlName="familynamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+        <option disabled>Select name</option>
+        <option *ngFor="let name of databasebackendfamilyNameList" [value]="name">{{name.firstname}} {{name.lastname}}</option>
+      </select>
+  
+      <br>
+      <br>
 
-    We set the value of the drop down to the id in the FamilyName object. Go to the models > testfullname.ts file and you will see the id property 
-   -->
-   <h3>Pulls From Frontend</h3>
-      <select class="form-control" formControlName="controlnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-        <option disabled>Select name</option>
-        <option *ngFor="let name of familyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
-      </select>
-
-      <label for="first-name">Full Name Drop Down list - Pulls from Backend: </label>
-      <h3>Pulls From Backend</h3>
-      <!-- PULLS DATA FROM BACKEND SERVICE-->
-      <select class="form-control" formControlName="controlbackendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-        <option disabled>Select name</option>
-        <option *ngFor="let name of backendfamilyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
-      </select>
-      <h3>Pulls From Backend and Database</h3>
-      <!-- PULLS DATA FROM BACKEND SERVICE and database-->
-      <select class="form-control" formControlName="controldatabasebackendnamelist" (change)="changeFamilyNameList($event)"> <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
-        <option disabled>Select name</option>
-        <option *ngFor="let name of databasebackendfamilyNameList" [value]="name.id">{{name.firstname}} {{name.lastname}}</option>
-      </select>
+      <h4>Add new family name</h4>
       <label for="first-name">First Name: </label>
       <input id="first-name" class="form-control" type="text" formControlName="firstName">
 
       <label for="last-name">Last Name: </label>
       <input id="last-name" class="form-control" type="text" formControlName="lastName">
       <br>
-      <!-- RouterLink template, makes that element(button element in this case) a link that initiates navigation to a route.
-         look in the app-routing.module.ts file.. the code below routes to the registration form -->
-      <button type="button" [routerLink]="['/registration']" class="btn btn-primary btn-sm">Register</button>
 
-      <button type="button" class="btn btn-secondary btn-sm" (click)="showFormValues()"> Show Form Data</button>
-
-      <button type="button" class="btn btn-success btn-sm"> + Add Family Memeber</button>
+      
+      <button type="button" class="btn btn-success btn-sm" (click)="createFamilyName()"> + Add Family Memeber</button>
+   
+   <!-- Family List -->
+   <br>
+   <br>
+   <h4>Family Name list from the database</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let familyName of databasebackendfamilyNameList">
+            <td>{{ familyName.id }}</td>
+            <td>{{ familyName.firstname }}</td>
+            <td>{{ familyName.lastname }}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm" (click)="selectedFamilyName(familyName)">Select</button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="deleteFamilyName(familyName)">Delete</button>
+            </td>
+          </tr>
+        </table>
     </div>
-
   </div>
 </form>
