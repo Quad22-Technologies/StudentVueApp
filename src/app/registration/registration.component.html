@@ -43,6 +43,11 @@
                     <option disabled>Choose Grade</option>
                     <option *ngFor="let gradeName of gradelist" [value]="gradeName.gradeName">{{gradeName.gradeName}}</option>
                 </select>
+                <label for="userGrade">Backend Grade: </label>
+                <select class="form-control" formControlName="backendGradelist">
+                    <option disabled>Choose Grade</option>
+                    <option *ngFor="let gradeName of backendGradelist" [value]="gradeName.gradeName">{{gradeName.gradeName}}</option>
+                </select>
                 <br><br>
                 <button [routerLink]="['']" (click)="onSubmit()">Register</button>
             </div>

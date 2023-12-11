@@ -3,7 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gradelist } from '../models/gradelist';
 import { GradeListService } from '../services/gradelist.service';
+import { gradelistApi } from '../services/gradelist-api';
 import { regObj } from '../models/registration';
+import { registrationApiService } from '../services/registration-api';
 
 @Component({
   selector: 'app-registration',
@@ -23,22 +25,30 @@ export class RegistrationComponent {
     username: new FormControl(''),
     password: new FormControl(''),
     password2: new FormControl(''),
-    gradelist: new FormControl('')
+    gradelist: new FormControl(''),
+    backendGradeList: new FormControl('')
   });
 
   //instatiate the objects
-  regObj: regObj = {};
+  regObj: regObj[] = [];
   gradelist: gradelist[] = [];
+  backendGradelist: gradelist[] =[];
 
-constructor(private router:Router, private gradelistservice: GradeListService ){}
+constructor(private router:Router, private gradelistservice: GradeListService, private gradelistApi:gradelistApi, private regApiService:registrationApiService){}
 
 ngOnInit(): void{
   this.gradelist = this.gradelistservice.getGradeListData();
+
+  this.gradelistApi.getGradeList().subscribe(data => {
+    console.log("Backend Data List", data);
+    this.backendGradelist = data; });
+
+    this.regApiService.getRegInfo().subscribe(data => {
+      console.log("Backend Data List", data);
+      this.regObj = data; });
 }
 
   onSubmit() {
     this.router.navigate(['']);
   }
 }
-
-//   this.familyNameList = this.familynameservice.getFamilyNamesData();

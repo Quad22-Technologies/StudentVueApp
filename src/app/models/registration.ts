@@ -9,4 +9,5 @@ export interface regObj {
   password?: string | null;
   password2?: string | null;
   gradelist?: string | null;
+  backendGradelist?: string | null;
 }
