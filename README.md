@@ -1,3 +1,5 @@
+[![Test Status](https://github.com/Quad22-Technologies/StudentVueApp/actions/workflows/node.js.yml/badge.svg)](https://github.com/Quad22-Technologies/StudentVueApp/actions/workflows/node.js.yml)
+
 # StudentVueApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
