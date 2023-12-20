@@ -8,6 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GradebookComponent } from './gradebook/gradebook.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { GradebookComponent } from './gradebook/gradebook.component';
   imports: [
     BrowserModule,
     AppRoutingModule, 
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
