@@ -1,0 +1,24 @@
+<h4>List of family names from database</h4>
+<select class="form-control" formControlName="familynamelist" > <!-- change is an event used to capture when the user selects an item from the dropdown Look at the console.log-->
+ <option disabled>Select name</option>
+ <option *ngFor="let name of familynames" [value]="name">{{name.firstname}} {{name.lastname}}</option>
+</select>
+
+<br>
+<br>
+
+<h4>Family Name list from the database</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let fn of familynames">
+            <td>{{ fn.id }}</td>
+            <td>{{ fn.firstname }}</td>
+            <td>{{ fn.lastname }}</td>
+          </tr>
+        </table>
