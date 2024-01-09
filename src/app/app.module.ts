@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FamilynamesComponent } from './familynames/familynames.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GradebookComponent } from './gradebook/gradebook.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

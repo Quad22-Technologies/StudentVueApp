@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FamilyName } from '../models/familyname';
 import { FamilyNameDataService } from '../services/familynamedataservice';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-familynames',
@@ -33,5 +34,19 @@ export class FamilynamesComponent  implements OnInit{
     });
   }
 
+  onCreateFamilyName(addForm: NgForm): void {
+    this.familyNameDataService.createFamilyName(addForm.value).subscribe({
+      next: (response: FamilyName) => {
+        console.log(response);
+        this.loadFamilyNames();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message)
+      },
+      complete: () => {
+        // Handle completion cases
+      }
+    });
+  }
 }
 
