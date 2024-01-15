@@ -1,0 +1,48 @@
+<div class="container justify-content-center">
+  <h4>Current Classes</h4>
+  <table class="container table">
+    <tr>
+      <th><b>Class Name</b></th>
+      <th>Room Number</th>
+      <th>Teacher</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let class of existingClasses">
+      <td><b>{{class.name}}</b></td>
+      <td>{{class.roomNumber}}</td>
+      <td>{{class.teacherName}}</td>
+      <td><button type="submit" class="btn-primary " (click)="remove(class.id)">remove Class</button></td>
+    </tr>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+
+<form [formGroup]="ClassRegistrationForm">
+  <div class="container justify-content-center">
+    <h4>Available Classes</h4>
+    <div class="container table">
+      <div class="row header">
+        <th class="col"><b>Class Name</b></th>
+        <th class="col">Room Number</th>
+        <th class="col">Teacher</th>
+      </div>
+      <tr *ngFor="let class of classes" class="row">
+        <td class="col"><b>{{class.name}}</b></td>
+        <td class="col">{{class.roomNumber}}</td>
+        <td class="col">{{class.teacherName}}</td>
+        <td><button type="submit" class="btn-success " (click)="submit(class.id)">Add Class</button></td>
+      </tr>
+      <!-- <select name="SelectClass" size="5" formControlName="selectedClass" id="classelection" class="form-control container-fluid" style="padding:0px; border:none;" multiple>
+        <option *ngFor="let class of classes" value={{class.id}} class="row">
+            <td class="col"><b>{{class.name}}</b></td>
+            <td class="col">{{class.roomNumber}}</td>
+            <td class="col">{{class.teacherName}}</td>
+        </option>
+      </select> -->
+    </div>
+    <!--<button type="submit" class="btn-success " (click)="submit()">Add Class</button>-->
+  </div>
+</form>

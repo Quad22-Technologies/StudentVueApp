@@ -8,8 +8,9 @@ import { GradeBookService } from '../services/gradebook.service';
   styleUrls: ['./gradebook.component.scss']
 })
 export class GradebookComponent {
-gradebooklist:Gradebook[] =[];
-constructor(private gradebookservice: GradeBookService){
-  this.gradebooklist = gradebookservice.getGradeBookData();
-}
+  gradebooklist: Gradebook[] =[];
+
+  constructor(private gradebookservice: GradeBookService){
+    this.gradebooklist = gradebookservice.getGradeBookData();
+  }
 }
