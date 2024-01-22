@@ -22,4 +22,12 @@ export class ClassNamesApiService {
   getClass(id: string): Observable<ClassName> {
     return this.http.get<ClassName>(this.classnamesURL + "/get/" + id, this.httpOptions);
   }
+
+  getRegisteredClasses(uid: string): Observable<ClassName[]> {
+    return this.http.get<ClassName[]>(this.classnamesURL + "/registered/" + uid, this.httpOptions);
+  }
+
+  getAvailableClasses(uid: string): Observable<ClassName[]> {
+    return this.http.get<ClassName[]>(this.classnamesURL + "/available/" + uid, this.httpOptions);
+  }
 }

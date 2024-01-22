@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gradelist } from '../models/gradelist';
 import { GradeListService } from '../services/gradelist.service';
+import { UsersApiService } from '../services/users.service';
+
 import { regObj } from '../models/registration';
 
 @Component({
@@ -21,6 +23,7 @@ export class RegistrationComponent {
     state: new FormControl(''),
     zipCode: new FormControl(''),
     username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
     password2: new FormControl(''),
     gradelist: new FormControl('')
@@ -29,16 +32,22 @@ export class RegistrationComponent {
   //instatiate the objects
   regObj: regObj = {};
   gradelist: gradelist[] = [];
+  response: string = ""; // response given after sending
+  hideResponse: boolean = true;
+  success = false;
 
-constructor(private router:Router, private gradelistservice: GradeListService ){}
+  constructor(private router: Router, private gradelistservice: GradeListService,
+              private UsersApiService: UsersApiService){}
 
-ngOnInit(): void{
-  this.gradelist = this.gradelistservice.getGradeListData();
-}
+  ngOnInit(): void{
+    this.gradelistservice.getGradeList().subscribe(data => {this.gradelist = data;});
+  }
 
   onSubmit() {
-    this.router.navigate(['']);
+    this.hideResponse = false;
+    this.UsersApiService.registerUser(this.form.value).subscribe(data => {
+      this.response = data.response;
+      this.success = data.success;
+    });
   }
 }
-
-//   this.familyNameList = this.familynameservice.getFamilyNamesData();

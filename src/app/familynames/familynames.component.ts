@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class FamilynamesComponent  implements OnInit{
 
   familynames: FamilyName[] = [];
-  
+
   constructor(private familyNameDataService: FamilyNameDataService){}
 
   ngOnInit(): void {

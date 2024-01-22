@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SimpleUser } from '../models/user';
+import { regObj, RegResult } from '../models/registration';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class UsersApiService {
 
   getUser(id: string): Observable<SimpleUser> {
     return this.http.get<SimpleUser>(this.usersURL + "/get/" + id, this.httpOptions);
+  }
+
+  registerUser(regData: regObj): Observable<RegResult> {
+    return this.http.post<RegResult>(this.usersURL + "/register", regData, this.httpOptions);
   }
 }

@@ -4,9 +4,15 @@ export interface regObj {
   address?: string | null;
   city?: string | null;
   state?: string | null;
-  zipCode?: number | null;
+  zipCode?: string | null;
   username?: string | null;
+  email?: string | null;
   password?: string | null;
   password2?: string | null;
   gradelist?: string | null;
+}
+
+export interface RegResult {
+  success: boolean;
+  response: string;
 }
