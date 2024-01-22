@@ -15,12 +15,12 @@ export class FamilyNameDataService {
   constructor(private http: HttpClient) { }
 
   getFamilyNames(): Observable<FamilyName[]> {
-    return this.http.get<FamilyName[]>(`${this.familynameurl}/allnames`, this.httpOptions)
+    return this.http.get<FamilyName[]>(`${this.familynameurl}/allnames`)
       .pipe(
         catchError(this.handleError('getFamilyNames', []))
       );
   }
-
+ 
   getDatabaseFamilyNames(): Observable<FamilyName[]> {
     return this.http.get<FamilyName[]>(`${this.familynameurl}/findallnames`, this.httpOptions)
       .pipe(
@@ -39,7 +39,7 @@ export class FamilyNameDataService {
   }
 
   updateFamilyName(familyName: FamilyName): Observable<FamilyName> {
-    return this.http.post<FamilyName>(`${this.familynameurl}/update`, JSON.stringify(familyName), this.httpOptions)
+    return this.http.put<FamilyName>(`${this.familynameurl}/update`, JSON.stringify(familyName), this.httpOptions)
       .pipe(
         catchError(error => {
           console.error('Error in updating family name:', error);
