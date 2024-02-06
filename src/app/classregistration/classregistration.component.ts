@@ -27,7 +27,7 @@ export class ClassRegistrationComponent implements OnInit {
   existingClasses: ClassName[] = [];
 
   constructor(private router: Router, private ClassNamesApiService: ClassNamesApiService,
-              private UsersApiService: UsersApiService, private ClassGradesApiService: ClassGradesApiService) {
+              private UsersApiService: UsersApiService, private classGradesApiService: ClassGradesApiService) {
 
     ClassNamesApiService.getRegisteredClasses(EXAMPLEUID).subscribe(
       classnames => {
@@ -57,12 +57,22 @@ export class ClassRegistrationComponent implements OnInit {
   ngOnInit(): void {}
 
 
-  submit(id: any) {
-    console.log(id);
+  submit(classname: any) {
+    var classGrade = {
+      id: "", // unimportant
+      grade: -1,
+      studentId: EXAMPLEUID,
+      teacherId: classname.teacherId,
+      classNameId: classname.id
+    }
+    console.log(classname);
+    this.classGradesApiService.registerClassGrade(classGrade);
+    this.classes?.filter(value => {return value==classname;});
   }
 
-  // TODO: make this remove the class for the user.
   remove(id: any) {
     console.log(id);
+    this.classGradesApiService.removeClassGrade(id);
+    this.existingClasses?.filter(value => {return value.id==id;});
   }
 }

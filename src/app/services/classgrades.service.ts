@@ -22,4 +22,13 @@ export class ClassGradesApiService {
   getGradesByUser(userid: string): Observable<ClassGrade[]> {
     return this.http.get<ClassGrade[]>(this.classgradesURL + "/get/byUser/" + userid, this.httpOptions);
   }
+
+  registerClassGrade(classgrade: ClassGrade) {
+    return this.http.post<object>(this.classgradesURL + "/create", classgrade, this.httpOptions);
+  }
+
+  removeClassGrade(classgradeid: string) {
+    console.log("test");
+    return this.http.delete<object>(this.classgradesURL + "/delete/" + classgradeid, this.httpOptions);
+  }
 }

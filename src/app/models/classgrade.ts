@@ -1,6 +1,7 @@
 export interface ClassGrade{
     id?: string;
-    StudentId?: string | null;
+    studentId?: string | null;
     teacherId?: string | null;
     classNameId?: string | null;
+    grade?: Number | null;
 }

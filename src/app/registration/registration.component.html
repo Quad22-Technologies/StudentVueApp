@@ -1,6 +1,6 @@
 
 <!--The code above is a navbar linking both the registration and login components together-->
-<form [formGroup]="form" form (ngSubmit)="onSubmit()">
+<form [formGroup]="form" class="needs-validation" form (ngSubmit)="onSubmit()">
     <div class="container">
         <div class="row justify-content-center" [hidden]="hideResponse">
             <div class="col">
@@ -13,6 +13,9 @@
                 <label for="firstName">First Name: </label>
                 <input class="form-control mr-sm-2" type="text" placeholder="First Name" aria-label="First Name"
                     id="firstName" formControlName="firstName" required>
+                <div class="invalid-feedback">
+                  Field must be filled out
+                </div>
                 <br>
                 <label for="lastName">Last Name: </label>
                 <input class="form-control mr-sm-2" type="search" placeholder="Last Name" aria-label="Last name"
