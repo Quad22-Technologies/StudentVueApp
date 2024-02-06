@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GradebookComponent } from './gradebook/gradebook.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     FamilynamesComponent,
     RegistrationComponent,
-    GradebookComponent
+    GradebookComponent,
+    ScheduleComponent
 
   ],
   imports: [
