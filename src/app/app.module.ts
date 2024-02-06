@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GradebookComponent } from './gradebook/gradebook.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClassRegistrationComponent } from './classregistration/classregistration.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { ClassRegistrationComponent } from './classregistration/classregistratio
     FamilynamesComponent,
     RegistrationComponent,
     GradebookComponent,
-    ClassRegistrationComponent
+    ClassRegistrationComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
